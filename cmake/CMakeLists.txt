@@ -6,8 +6,6 @@ endif()
 
 project(lzma LANGUAGES CXX)
 
-include(FetchContent)
-
 set(LZMA_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/../)
 
 set(LZMA_SOURCES ${LZMA_ROOT}/C/7zAlloc.c
@@ -49,12 +47,12 @@ set(LZMA_SOURCES ${LZMA_ROOT}/C/7zAlloc.c
                  ${LZMA_ROOT}/C/XzIn.c
 )
 
-add_library(LZMA STATIC ${LZMA_SOURCES})
-target_include_directories(LZMA PUBLIC ${LZMA_ROOT}/C/)
+add_library(lzma STATIC ${LZMA_SOURCES})
+target_include_directories(lzma PUBLIC ${LZMA_ROOT}/C/)
 add_compile_definitions(_7ZIP_ST)
 
-set_property(TARGET LZMA PROPERTY CXX_STANDARD 17)
+set_property(TARGET lzma PROPERTY CXX_STANDARD 17)
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-    target_compile_options(LZMA PRIVATE $<BUILD_INTERFACE:-Wno-unknown-attributes>)
+    target_compile_options(lzma PRIVATE $<BUILD_INTERFACE:-Wno-unknown-attributes>)
 endif()

@@ -4,7 +4,7 @@ if (POLICY CMP0048)
     cmake_policy(SET CMP0048 NEW)
 endif (POLICY CMP0048)
 
-project(ConanWrapper VERSION 1.0.0 LANGUAGES C)
+project(ConanWrapper VERSION 1.0.0 LANGUAGES CXX)
 
 cmake_minimum_required(VERSION 3.10)
 
@@ -75,5 +75,3 @@ set(CMAKE_OBJCOPY      $ENV{OBJCOPY})
 set(CMAKE_OBJDUMP      $ENV{OBJDUMP})
 set(CMAKE_READELF      $ENV{READELF})
 set(CMAKE_LD           $ENV{LD})
-
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_BINARY_DIR})

@@ -4,7 +4,7 @@ if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
     include("./CMakeListsConan.txt")
 endif()
 
-project(lzma LANGUAGES C)
+project(lzma LANGUAGES CXX)
 
 set(LZMA_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/../)
 
